@@ -1,0 +1,63 @@
+﻿TASK [/home/bevel/platforms/hyperledger-indy/configuration/../../shared/configuration/roles/git_push : Execute git push for ssh] **************
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:15
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": "cd \"/home/bevel/platforms/hyperledger-indy/configuration/../../../\"
+echo \"---------------GIT PUSH---------------\"
+export GIT_SSH_COMMAND='ssh -i /home/bevel/build/gitops'
+git config user.email akshay.kurhekar1014662@gmail.com
+git config user.name akshaykurhekar
+git --git-dir=/home/bevel/platforms/hyperledger-indy/configuration/../../..//.git add -A .
+
+# To ignore a directory add it add reset path
+reset_path=platforms/hyperledger-indy/configuration
+if [ -n \"$reset_path\" ]; then
+    git --git-dir=/home/bevel/platforms/hyperledger-indy/configuration/../../..//.git reset \"platforms/hyperledger-indy/configuration\"
+    fi
+    git --git-dir=/home/bevel/platforms/hyperledger-indy/configuration/../../..//.git commit -s -m \"[ci skip] Pushing deployment file for service account\" || true
+    git --git-dir=/home/bevel/platforms/hyperledger-indy/configuration/../../..//.git push git@github.com:akshaykurhekar/bevel.git HEAD:local  
+    ", "delta": "0:00:01.803449", "end": "2022-06-30 09:57:01.860022", "msg": "non-zero return code", "rc": 128, "start": "2022-06-30 09:57:00.056573", "stderr": "fatal: not in a git directory 
+    fatal: not in a git directory
+    *** Please tell me who you are.
+    Run
+      git config --global user.email \"you@example.com\"
+        git config --global user.name \"Your Name\"
+        to set your account's default identity.
+        Omit --global to set the identity only in this repository.
+        fatal: unable to auto-detect email address (got 'root@akshay-Inspiron-15-3567.(none)')
+        git@github.com: Permission denied (publickey).
+        fatal: Could not read from remote repository.
+        Please make sure you have the correct access rights 
+        and the repository exists.", "stderr_lines": ["fatal: not in a git directory", "fatal: not in a git directory", "", "*** Please tell me who you are.", "", "Run", "", " 
+         git config --global user.email \"you@example.com\"", "  git config --global user.name \"Your Name\"", "", 
+         "to set your account's default identity.", "Omit --global to set the identity only in this repository.", "",
+         "fatal: unable to auto-detect email address (got 'root@akshay-Inspiron-15-3567.(none)')", 
+         "git@github.com: Permission denied (publickey).", "fatal: Could not read from remote repository.", "",
+          "Please make sure you have the correct access rights", "and the repository exists."],
+           "stdout": "---------------GIT PUSH---------------", "stdout_lines": ["---------------GIT PUSH---------------"]}
+...ignoring
+
+TASK [/home/bevel/platforms/hyperledger-indy/configuration/../../shared/configuration/roles/git_push : Execute git push for https] ************
+task path: /home/bevel/platforms/shared/configuration/roles/git_push/tasks/main.yaml:41
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+TASK [/home/bevel/platforms/hyperledger-indy/configuration/../../shared/configuration/roles/check/k8_component : Wait for ServiceAccount bevel-authority-authority-trustee-vault-auth] ***
+task path: /home/bevel/platforms/shared/configuration/roles/check/k8_component/tasks/main.yaml:51
+redirecting (type: modules) ansible.builtin.k8s_info to kubernetes.core.k8s_info
+FAILED - RETRYING: [localhost]: Wait for ServiceAccount bevel-authority-authority-trustee-vault-auth (20 retries left).
+redirecting (type: modules) ansible.builtin.k8s_info to kubernetes.core.k8s_info
+FAILED - RETRYING: [localhost]: Wait for ServiceAccount bevel-authority-authority-trustee-vault-auth (19 retries left).
+redirecting (type: modules) ansible.builtin.k8s_info to kubernetes.core.k8s_info
+.
+.
+.
+.
+.
+

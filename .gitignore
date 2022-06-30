@@ -39,3 +39,6 @@
 # custom config templates
 *_custom.tpl
 .history/
+gitops.pub
+gitops
+vault
